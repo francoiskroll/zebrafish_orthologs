@@ -136,6 +136,8 @@ Look at the results with:
 python hits_to_csv_test.py
 ```
 
+For each human protein of interest, I change in `hits_to_csv_test.py` the file name.
+
 Look at the names of the human proteins for your protein of interest. It could be an isoform or more rarely a synonym/previous name to the one you are used to.
 
 Each time, copy/paste the zebrafish hit into NCBI to look at the record.
