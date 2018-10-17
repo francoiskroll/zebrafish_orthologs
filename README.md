@@ -143,9 +143,9 @@ Look at the names of the human proteins for your protein of interest. It could b
 Each time, copy/paste the zebrafish hit into NCBI to look at the record.
 Usually, they will all be isoforms of the same protein but I have had cases where there seems to be two orthologs for one human protein.
 
-# 8. Match it with the ZFIN record
+# 8. Match your ortholog with the ZFIN record
 
-It is not always clear which ZFIN record matches the NCBI record of your ortholog.
+It is not always clear which ZFIN record matches your ortholog's NCBI record.
 For instance, if there are two copies of your zebrafish ortholog (`a` and `b`), NCBI does not seem to mention which one it is.
 If it is unclear, the safest thing to do is to get the ZFIN protein sequence (`Sequence information` > `UniProt...`) and align it to the NCBI sequence with a Protein BLAST (tick `Align two or more sequences`).
-If they are the same sequences, you expect > 99% identity.
+You expect > 99% identity if they are the same.
