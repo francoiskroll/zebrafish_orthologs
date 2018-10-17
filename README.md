@@ -36,7 +36,7 @@ i.e. amino acids sequences in fasta format from NCBI/protein.
 mkdir RefSeqChromosomeReports
 mkdir db`
 
-```
+```bash
 for next in $(cat assembly_summary_chromosome.txt);
 do
 wget -P RefSeqChromosomeGenomes "$next"/*protein.faa.gz;
