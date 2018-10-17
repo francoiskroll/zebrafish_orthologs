@@ -1,7 +1,7 @@
 _IN PROGRESS_
 
-# zebrafish_orthologs
-Automated method to find orthologs of human genes in zebrafish.
+# Zebrafish orthologs
+Automated method to find orthologs of human proteins in zebrafish proteome.
 
 This is a quick and easy method to find orthologs of human genes in zebrafish based on the working definition of Reciprocal Best Hit (RBH).
 The method and scripts are originally from [Nicolas Schmelling](https://github.com/schmelling). I only tweaked them for my application.
@@ -12,32 +12,39 @@ His protocols.io explaining the method and Terminal commands: https://www.protoc
 
 His GitHub with the original Python scripts and more explanations: https://github.com/schmelling/reciprocal_BLAST
 
+# 0. Folders and dependencies
+You want to do the next steps in a folder for your project:
 
-
- `mkdir project`
- `cd project`
+ `mkdir xxx`
+ `cd xxx`
+ 
+ You will need Biopython. Install it with eg.
  
  `pip3 biopython`
 
-# 1. Download the Homo sapiens sequences you are interested in.
+# 1. Download your _Homo sapiens_ sequences of interest.
 i.e. amino acids sequences in fasta format from NCBI/protein.
 * One fasta file per sequence.
 * Try to get RefSeq sequences.
-* If possible, avoid taking an isoform. For example the preprotein should be a good choice. 
+* If possible, avoid taking an isoform. For example, the preprotein should be a good choice. 
 * If not possible, try taking the longest possible isoform while avoiding the X isoforms (eg. isoform X11) as these are computationally predicted.
 
-# 2. Download Danio rerio proteome
+# 2. Download _Danio rerio_ proteome
 `awk -F '\t' '{if($12=="Chromosome") print $20}' assembly_summary.txt > assembly_summary_chromosome.txt`
 
 `mkdir RefSeqChromosomeGenomes
 mkdir RefSeqChromosomeReports
 mkdir db`
 
-`for next in $(cat assembly_summary_chromosome.txt);
-do
-wget -P RefSeqChromosomeGenomes "$next"/*protein.faa.gz;
-wget -P RefSeqChromosomeReports "$next"/*assembly_report.txt;
-done`
+`for next in $(cat assembly_summary_chromosome.txt);`
+
+`do`
+
+`wget -P RefSeqChromosomeGenomes "$next"/*protein.faa.gz;`
+
+`wget -P RefSeqChromosomeReports "$next"/*assembly_report.txt;`
+
+`done`
 
 `gunzip RefSeqChromosomeGenomes/*.gz`
 
