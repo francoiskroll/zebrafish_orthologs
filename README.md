@@ -1,7 +1,7 @@
 _IN PROGRESS_
 
 # Zebrafish orthologs
-Automated method to find orthologs of human proteins in zebrafish proteome.
+Semi-automated method to find orthologs of human proteins in zebrafish proteome.
 
 This is a quick and easy method to find orthologs of human genes in zebrafish based on the working definition of Reciprocal Best Hit (RBH).
 The method and scripts are originally from [Nicolas Schmelling](https://github.com/schmelling). I only tweaked them for my application.
